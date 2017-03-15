@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    app:carbon_insetColor="?attr/colorPrimary">
+
+    <carbon.widget.ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <carbon.widget.LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <carbon.widget.TextView
+                android:id="@+id/title1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/carbon_paddingHalf"
+                android:text="Registration Form"
+                android:textSize="28sp" />
+
+            <carbon.widget.InputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/carbon_padding"
+                app:carbon_label="username"
+                app:carbon_errorMessage="kindly enter proper username"
+                app:carbon_labelStyle="floating"
+                app:carbon_showClear="true">
+
+                <carbon.widget.EditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:tag="enable"
+                    android:text="amit_upadhyay"
+                    app:carbon_pattern="^[a-zA-Z0-9]+"
+                    app:carbon_required="true" />
+            </carbon.widget.InputLayout>
+
+            <carbon.widget.InputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/carbon_padding"
+                app:carbon_errorMessage="it's not an email"
+                app:carbon_label="email"
+                app:carbon_labelStyle="persistent"
+                app:carbon_minCharacters="3"
+                app:carbon_showClear="true">
+
+                <carbon.widget.EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="developerupadhyay@gmail.com"
+                    android:tag="enable"
+                    android:text="developerupadhyay@gmail.com"
+                    app:carbon_pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$" />
+            </carbon.widget.InputLayout>
+
+            <carbon.widget.InputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/carbon_padding"
+                app:carbon_label="password"
+                app:carbon_labelStyle="floating"
+                app:carbon_showPassword="true">
+
+                <carbon.widget.EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:tag="enable"
+                    app:carbon_maxCharacters="10"
+                    app:carbon_minCharacters="3" />
+            </carbon.widget.InputLayout>
+
+            <carbon.widget.RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/carbon_contentSpace"
+                android:layout_marginRight="@dimen/carbon_windowPadding"
+                android:paddingBottom="@dimen/carbon_padding"
+                android:paddingTop="@dimen/carbon_padding">
+
+                <carbon.widget.Button
+                    android:id="@+id/forcestop1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title1"
+                    android:layout_marginTop="@dimen/carbon_padding"
+                    android:background="#ffffffff"
+                    android:text="Reset"
+                    android:textAppearance="?attr/carbon_textAppearanceButton"
+                    app:carbon_rippleColor="#42FF5252" />
+
+                <carbon.widget.Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title1"
+                    android:layout_marginLeft="@dimen/carbon_padding"
+                    android:layout_marginTop="@dimen/carbon_padding"
+                    android:layout_toRightOf="@+id/forcestop1"
+                    android:background="#ffFF5252"
+                    android:text="Submit" />
+
+                <carbon.widget.CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/forcestop1"
+                    android:layout_marginTop="@dimen/carbon_padding"
+                    android:paddingLeft="4dp"
+                    android:text="Agree with T and C" />
+            </carbon.widget.RelativeLayout>
+
+
+        </carbon.widget.LinearLayout>
+
+
+    </carbon.widget.ScrollView>
+</carbon.widget.LinearLayout>

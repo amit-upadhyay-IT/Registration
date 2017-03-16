@@ -17,11 +17,11 @@
             android:orientation="vertical">
 
             <carbon.widget.TextView
-                android:id="@+id/title1"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/carbon_paddingHalf"
-                android:text="Registration Form"
+                android:layout_gravity="center_horizontal"
+                android:text="Register Here"
                 android:textSize="28sp" />
 
             <carbon.widget.InputLayout
@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:tag="enable"
                     android:text="amit_upadhyay"
-                    app:carbon_pattern="^[a-zA-Z0-9]+"
+                    app:carbon_pattern="^[a-zA-Z0-9_]+"
                     app:carbon_required="true" />
             </carbon.widget.InputLayout>
 
@@ -89,11 +89,19 @@
                 android:paddingBottom="@dimen/carbon_padding"
                 android:paddingTop="@dimen/carbon_padding">
 
+                <carbon.widget.CheckBox
+                    android:id="@+id/check_agreement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/carbon_padding"
+                    android:paddingLeft="4dp"
+                    android:text="Agree with TnC" />
+
                 <carbon.widget.Button
                     android:id="@+id/forcestop1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/title1"
+                    android:layout_below="@+id/check_agreement"
                     android:layout_marginTop="@dimen/carbon_padding"
                     android:background="#ffffffff"
                     android:text="Reset"
@@ -103,20 +111,13 @@
                 <carbon.widget.Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/title1"
+                    android:layout_below="@+id/check_agreement"
                     android:layout_marginLeft="@dimen/carbon_padding"
                     android:layout_marginTop="@dimen/carbon_padding"
                     android:layout_toRightOf="@+id/forcestop1"
                     android:background="#ffFF5252"
                     android:text="Submit" />
 
-                <carbon.widget.CheckBox
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/forcestop1"
-                    android:layout_marginTop="@dimen/carbon_padding"
-                    android:paddingLeft="4dp"
-                    android:text="Agree with T and C" />
             </carbon.widget.RelativeLayout>
 
 

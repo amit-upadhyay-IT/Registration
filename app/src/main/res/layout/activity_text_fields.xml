@@ -29,12 +29,14 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/carbon_padding"
                 app:carbon_label="username"
-                app:carbon_errorMessage="kindly enter proper username"
+                app:carbon_errorMessage="kindly enter a proper username"
                 app:carbon_labelStyle="floating"
+                app:carbon_minCharacters="5"
+                app:carbon_maxCharacters="25"
                 app:carbon_showClear="true">
 
                 <carbon.widget.EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/user_name_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:tag="enable"
@@ -50,14 +52,13 @@
                 app:carbon_errorMessage="it's not an email"
                 app:carbon_label="email"
                 app:carbon_labelStyle="persistent"
-                app:carbon_minCharacters="3"
+                app:carbon_minCharacters="4"
                 app:carbon_showClear="true">
 
                 <carbon.widget.EditText
-                    android:id="@+id/editText3"
+                    android:id="@+id/email_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="developerupadhyay@gmail.com"
                     android:tag="enable"
                     android:text="developerupadhyay@gmail.com"
                     app:carbon_pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$" />
@@ -68,16 +69,63 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/carbon_padding"
                 app:carbon_label="password"
+                app:carbon_minCharacters="6"
+                app:carbon_maxCharacters="20"
+                app:carbon_errorMessage="it's not a valid password"
                 app:carbon_labelStyle="floating"
                 app:carbon_showPassword="true">
 
                 <carbon.widget.EditText
+                    android:id="@+id/password_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
                     android:tag="enable"
-                    app:carbon_maxCharacters="10"
-                    app:carbon_minCharacters="3" />
+                    app:carbon_maxCharacters="20"
+                    app:carbon_minCharacters="6" />
+            </carbon.widget.InputLayout>
+
+            <carbon.widget.InputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/carbon_padding"
+                app:carbon_label="date of birth"
+                app:carbon_labelStyle="floating">
+
+                <carbon.widget.LinearLayout
+                    android:layout_marginTop="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:carbon_insetColor="?attr/colorPrimary">
+
+                    <carbon.widget.DropDown
+                        android:id="@+id/day"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="1"
+                        app:carbon_tint="?attr/colorPrimary" />
+
+                    <carbon.widget.DropDown
+                        android:id="@+id/month"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Jan"
+                        app:carbon_tint="?attr/colorPrimary" />
+
+                    <carbon.widget.DropDown
+                        android:id="@+id/year"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="1987"
+                        app:carbon_tint="?attr/colorPrimary" />
+
+                </carbon.widget.LinearLayout>
             </carbon.widget.InputLayout>
 
             <carbon.widget.RelativeLayout
@@ -122,7 +170,6 @@
 
 
         </carbon.widget.LinearLayout>
-
 
     </carbon.widget.ScrollView>
 </carbon.widget.LinearLayout>
